@@ -31,6 +31,10 @@ Steps to proceed as:
     
     
  # Step 2
+ 
+ Here, we will create a Jenkins job which will download 
+ the code and Dockerfile from the github automatically
+ on pushing it to the github.
     
 
 
