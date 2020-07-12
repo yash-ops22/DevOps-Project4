@@ -82,6 +82,7 @@ repository.
 <img src="job1d-build.png">
 
 
+
 # Step 4
 
 
@@ -90,10 +91,13 @@ so creating a configuration file for it.
 
 <img src="kubeconfig.png">
 
+
 For creating the container image first we have to configure the
 kubectl by creating a local yum repo of kubernetes in our redhat vm.
 
 <img src="k8srepo.png">
+
+
 
 
     
@@ -105,6 +109,8 @@ Dockerfile.
 
 <img src="dockerfile.png">
 
+
+
 # Step 5
 
 Before starting, we have to configure cloud for docker
@@ -114,7 +120,7 @@ it won't work.
 Docker Cloud Configuration:
 
 <img src="con-cloud.png">
-<img src="agenttemp.png">
+<img src="agentemp.png">
 <img src="connectmtehod.png">
 <img src="rmvolume.png">
 
@@ -129,4 +135,11 @@ will monitor the pods.
 
 <img src="job2deploy.png">
 
+
+
+
+
+
+
+THANK YOU......
 This is all about the task which is done Here!!
