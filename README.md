@@ -13,3 +13,38 @@ Steps to proceed as:
 5. Job2 ( Should be run on the dynamic slave of Jenkins configured with Kubernetes kubectl command): Launch the application on the top of Kubernetes cluster performing following operations:
     1.  If launching first time then create a deployment of the pod using the image created in the previous job. Else if deployment already exists then do rollout of the existing pod making zero downtime  for the user.
     2. If Application created first time, then Expose the application. Else don’t expose it.
+    
+    
+ # Step 1
+  Firstly we have to create a Dockerfile having web server installed.
+  Pushing the html code which will be launched on this web server 
+  and this file to github.  
+              
+                    
+                    FROM centos:latest
+                    RUN yum install sudo -y
+                    RUN yum install /sbin/service -y
+                    RUN yum install httpd -y
+                    COPY *.html /var/www/html
+                    CMD /usr/sbin/httpd -DFOREGROUND && /bin/bash
+                    EXPOSE 80
+    
+    
+ # Step 2
+    
+
+
+
+# Step 3
+
+
+
+
+# Step 4
+
+
+
+
+
+
+# Step 5
