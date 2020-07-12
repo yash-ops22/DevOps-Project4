@@ -13,7 +13,36 @@ Steps to proceed as:
 5. Job2 ( Should be run on the dynamic slave of Jenkins configured with Kubernetes kubectl command): Launch the application on the top of Kubernetes cluster performing following operations:
     1.  If launching first time then create a deployment of the pod using the image created in the previous job. Else if deployment already exists then do rollout of the existing pod making zero downtime  for the user.
     2. If Application created first time, then Expose the application. Else don’t expose it.
-    
+ 
+ 
+ 
+ Before Starting the docker service we have to start the 
+ remote login in the docker.
+ for this we have to make changes in the file
+ /usr/lib/systemd/system/docker.service
+ 
+       [Unit]
+    Description=Docker Application Container Engine
+    Documentation=https://docs.docker.com
+    BindsTo=containerd.service
+    After=network-online.target firewalld.service
+    Wants=network-online.target
+    Requires=docker.socket
+
+    [Service]
+    Type=notify
+    # the default is not to use systemd for cgroups because the delegate issues still
+    # exists and systemd currently does not support the cgroup feature set required
+    # for containers run by docker
+    ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:4243  *****
+    ExecReload=/bin/kill -s HUP $MAINPID
+    TimeoutSec=0
+    RestartSec=2
+    Restart=always
+
+    # Note that StartLimit* options were moved from "Service" to "Unit" in systemd 229.
+    @@@                                                                             
+    "/usr/lib/systemd/system/docker.service" 47L, 1642C           14,57         Top
     
  # Step 1
   Firstly we have to create a Dockerfile having web server installed.
