@@ -41,10 +41,26 @@ Steps to proceed as:
 
 # Step 3
 
+This Job of Jenkins will build our docker image from the file.
+After building the image it can be pushed to docker hub public
+repository.
 
 
 
 # Step 4
+
+For creating the container image first we have to configure the
+kubectl by creating a local yum repo of kubernetes in our redhat vm.
+
+    cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+    [kubernetes]
+    name=Kubernetes
+    baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    EOF
 
 
 
