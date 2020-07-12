@@ -49,6 +49,12 @@ repository.
 
 # Step 4
 
+
+we require a configuration of the kubectl
+so creating a configuration file for it.
+
+
+
 For creating the container image first we have to configure the
 kubectl by creating a local yum repo of kubernetes in our redhat vm.
 
@@ -61,10 +67,26 @@ kubectl by creating a local yum repo of kubernetes in our redhat vm.
     repo_gpgcheck=1
     gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
     EOF
-
-
-
-
+    
+Before creating the docker file for the kubectl
+we have to transfer client certificate, client key and 
+ca certificate in our redhat vm to configure kubectl.
 
 
 # Step 5
+
+Before starting, we have to configure cloud for docker
+in our jenkins, we need docker plugin for this or else
+it won't work.
+
+Docker Cloud Configuration
+
+
+
+# Step 6
+
+Now we will create a jenkins job which will
+deploy the image.
+We can scale  the required replicas and kubernetes
+will monitor the pods.
+
