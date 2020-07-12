@@ -34,7 +34,7 @@ Steps to proceed as:
     # the default is not to use systemd for cgroups because the delegate issues still
     # exists and systemd currently does not support the cgroup feature set required
     # for containers run by docker
-    ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:4243  *****
+    𝘌𝘹𝘦𝘤𝘚𝘵𝘢𝘳𝘵=/𝘶𝘴𝘳/𝘣𝘪𝘯/𝘥𝘰𝘤𝘬𝘦𝘳𝘥 -𝘏 𝘧𝘥:// -𝘏 𝘵𝘤𝘱://0.0.0.0:4243   <<---
     ExecReload=/bin/kill -s HUP $MAINPID
     TimeoutSec=0
     RestartSec=2
@@ -42,7 +42,12 @@ Steps to proceed as:
 
     # Note that StartLimit* options were moved from "Service" to "Unit" in systemd 229.
     @@@                                                                             
-    "/usr/lib/systemd/system/docker.service" 47L, 1642C           14,57         Top
+    "/usr/lib/systemd/system/docker.service" 
+    
+Then we have to restart the docker services.
+        
+    systemctl daemon-reload
+    systemctl restart docker
     
  # Step 1
   Firstly we have to create a Dockerfile having web server installed.
@@ -119,3 +124,6 @@ deploy the image.
 We can scale  the required replicas and kubernetes
 will monitor the pods.
 
+
+
+This is all about the task which is done Here!!
