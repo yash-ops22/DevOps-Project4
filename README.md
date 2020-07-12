@@ -49,7 +49,7 @@ Then we have to restart the docker services.
     systemctl daemon-reload
     systemctl restart docker
     
- # Step 1
+ # Step 1:
   Firstly we have to create a Dockerfile having web server installed.
   Pushing the html code which will be launched on this web server 
   and this file to github.  
@@ -64,7 +64,7 @@ Then we have to restart the docker services.
                     EXPOSE 80
     
     
- # Step 2
+ # Step 2:
  
  Here, we will create a Jenkins job which will download 
  the code and Dockerfile from the github automatically
@@ -74,7 +74,7 @@ Then we have to restart the docker services.
 
 
 
-# Step 3
+# Step 3:
 
 This Job of Jenkins will build our docker image from the file.
 After building the image it can be pushed to docker hub public
@@ -83,7 +83,7 @@ repository.
 
 
 
-# Step 4
+# Step 4:
 
 
 we require a configuration of the kubectl
@@ -111,7 +111,7 @@ Dockerfile.
 
 
 
-# Step 5
+# Step 5:
 
 Before starting, we have to configure cloud for docker
 in our jenkins, we need docker plugin for this or else
@@ -126,7 +126,7 @@ Docker Cloud Configuration:
 
 
 
-# Step 6
+# Step 6:
 
 Now we will create a jenkins job which will
 deploy the image.
