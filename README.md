@@ -14,6 +14,11 @@ Steps to proceed as:
     1.  If launching first time then create a deployment of the pod using the image created in the previous job. Else if deployment already exists then do rollout of the existing pod making zero downtime  for the user.
     2. If Application created first time, then Expose the application. Else don’t expose it.
  
+ <img src="1_l_mvklg3r7vcc6agt53w_a.png">
+ 
+ 
+ 
+ 
  # Requirement
  
  Before Starting the docker service we have to start the 
